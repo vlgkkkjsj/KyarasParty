@@ -7,11 +7,7 @@ class MusicDB
     private $author;
     private $linkMusic;
     private $findMusic;
-    private $nameIssuer;
 
-
-
-    
 
     public function __construct()
     {
@@ -38,10 +34,7 @@ class MusicDB
     {
         return $this->findMusic;
     }
-    public function getNameIssuer()
-    {
-        return $this->nameIssuer;
-    }
+
     // function setters variables
 
     public function setID($id)
@@ -64,10 +57,6 @@ class MusicDB
     {
         $this->findMusic = $findMusic;
     }
-    public function setNameIssuer($nameIssuer)
-    {
-        $this->nameIssuer = $nameIssuer;
-    }
 
     public function singleSong($musicName)
     {
@@ -80,22 +69,22 @@ class MusicDB
 
         return mysqli_fetch_assoc($res);
     }
-    public function InsertSong($musicName,$author,$linkMusic,$findMusic,$nameIssuer)
+    public function InsertSong($musicName,$author,$linkMusic,$findMusic)
     {
         $musicName = filter_var($musicName, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $author = filter_var($author, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $linkMusic = filter_var($linkMusic, FILTER_SANITIZE_URL);
         $findMusic = filter_var($findMusic, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $nameIssuer = filter_var($nameIssuer, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-        if(empty($musicName)||empty($author)||empty($linkMusic)||empty($findMusic)||empty($nameIssuer))
+
+        if(empty($musicName)||empty($author)||empty($linkMusic)||empty($findMusic))
         {
             print "<script>'Veja se respondeu tudo'</script>";
             print "<script>location.href='Sugestões.php'</script>";
         }
         else 
         {
-            $sql = "INSERT INTO musictable (musicName,author,linkMusic,findMusic,nameIssuer) VALUES  ('{$musicName}','{$author}','{$linkMusic}','{$findMusic}','{$nameIssuer}')";
+            $sql = "INSERT INTO musictable (musicName,author,linkMusic,findMusic) VALUES  ('{$musicName}','{$author}','{$linkMusic}','{$findMusic}')";
             $res = mysqli_query($this->connection -> getConn(), $sql);
 
             if(mysqli_affected_rows($this->connection->getConn())>0)
@@ -140,9 +129,9 @@ class MusicDB
 
                 $musicDB -> setID($row['id']);
                 $musicDB -> setMusicName($row['musicName']);
-                $musicDB ->setAuthor($row['author']);
+                $musicDB -> setAuthor($row['author']);
                 $musicDB -> setLinkMusic($row['linkMusic']);
-                $musicDB -> setNameIssuer($row['nameIssuer']);
+                $musicDB -> setFindMusic($row['findMusic']);
 
                 $songs[] = $musicDB;
             }

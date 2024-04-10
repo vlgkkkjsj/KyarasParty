@@ -59,18 +59,17 @@ body
     /* background-image: url(images/image1_0\ \(1\).jpg); */
 }
 .section-est{
-    padding-top: 40px;
+    /* padding-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    padding-right: 20px;
-
+    padding-right: 20px; */
 }
 h1{
     color:black;
-    font-size: 125px;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     width: 800px;
@@ -153,7 +152,7 @@ section#corpo h4
     text-align: center;
 }
 
-.obtenha
+#obtenha
 {
     background-color: black; 
     color: #D9D9D9;;
@@ -170,11 +169,6 @@ section#corpo h4
     align-items: center;
     justify-content: center;
     margin-right: 22px;
-    cursor: pointer;
-}
-.obtenha:hover
-{
-    transform:scale(1.1);
 }
 section#corpo input#obtenha:hover
 {
@@ -182,6 +176,15 @@ section#corpo input#obtenha:hover
     transition: 0.1s;
     cursor: pointer;
 }
+table {
+    border-collapse: collapse;
+    border: 1px solid black; /* Define a borda de 1px sólida preta */
+  }
+  
+  th, td {
+    border: 1px solid black; /* Define a borda de 1px sólida preta para as células */
+    padding: 8px; /* Adiciona um espaçamento interno às células */
+  }
 /* @media(max-width:768px){
     .cabecalho-est-menu{
         font-size: 7px;

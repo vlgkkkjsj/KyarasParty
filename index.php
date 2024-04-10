@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head><meta charset="UTF-8">
+    <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width , initial-scale-1.0">
     <link rel="stylesheet" href="csssite.css">
     <title>Escutar muda tudo -Spotify</title>
     </head>
 
     <body>
-        <header id="cabecalho">
-            <img src="logo-spotify-2048-removebg-preview.png" id="logo">
-            <ul id="menu">
-                <li id="premium"><a class="link">premium</a></li>
-                <li id="ajuda"><a class="link">Ajuda</a></li>
-                <li id="baixar"><a class="link">baixar</a></li>
-                <li id="separador">|</li>
-                <li id="inscrever-se"><a class="link">inscrever-se</a></li>
-                <li id="baixar"><a class="link">Entrar</a></li>
+        <header class="cabecalho">
+            <div class="cabecalho-est">
+                <div class="cabecalho-est-int">
+                    <div class="cabecalho-est-img">
+                        <img src="images/logo-removebg-preview.png" class="logo">
+                    </div>
+                    <div class="cabecalho-est-ul">
+                        <ul class="cabecalho-est-menu">
+                            <li id="ajuda"><a class="link">Ajuda</a></li>
+                            <li id="separador">|</li>
+                            <li id="baixar"><a class="link" href='./pages/admin.php'>Entrar</a></li>
 
-            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </header>
-        <section id="corpo">
-            <h1>Escutar muda tudo</h1>
-            <h4>ilhões de musicas e podcasts para explorar. E nem precisa de cartão de crédito.</h4>
-            <input type="button" id="obtenha" value="OBTENHA O SPOTIFY FREE">
+        <section class="section">
+            <div class="section-est">
+                <h1>Escutar muda tudo</h1>
+                <h4>ESCREVE TEXTO.</h4>
+                    <button type="button" id="obtenha" class="obtenha" onclick="window.location.href='./pages/form.php'">
+                        Insira sua sugestão
+                    </button>
+            </div>
         </section>
         
     </body>

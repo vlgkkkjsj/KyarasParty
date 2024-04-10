@@ -5,7 +5,7 @@ class Connection
     private $host = "localhost";
     private $user = "root";
     private $pass = "";
-    private $base = "DbMusic";
+    private $base = "dbmusic";
     private $conn = "";
 
     public function __construct()
@@ -17,6 +17,6 @@ class Connection
     public function getConn()
     {
         return $this->conn;
-    }
+    }       
 
 }
